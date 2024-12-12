@@ -67,6 +67,24 @@ public class Main {
                 if (ligne >= 1 && ligne <= 3 && colonne >= 1 && colonne <= 3 && plateau[ligne][colonne] == ' ') {
                     plateau[ligne][colonne] = pionActuel;
                     coup++;
+
+// ------------------------- VERIFICATION SI UNE LIGNE EST COMPLETE -------------------------
+
+                    for (char[] lignePlateau : plateau) {
+                        for (char c : lignePlateau) {
+                            System.out.print(c + "\t");
+                        }
+                        System.out.print("\n");
+                    }
+
+                    for (int i = 1; i <= 3; i++) {
+                        if ((plateau[i][1] == plateau[i][2] && plateau[i][2] == plateau[i][3] && plateau[i][1] != ' ') || (plateau[1][i] == plateau[2][i] && plateau[2][i] == plateau[3][i] && plateau[1][i] != ' ')) {//j'adore l'auto complétion :)
+                            victoire = true;
+                        }
+                    }
+                    if ((plateau[1][1] == plateau[2][2] && plateau[2][2] == plateau[3][3] && plateau[1][1] != ' ') || (plateau[1][3] == plateau[2][2] && plateau[2][2] == plateau[3][1] && plateau[1][3] != ' ')) {
+                        victoire = true;
+                    }
                 }
             }
         }
