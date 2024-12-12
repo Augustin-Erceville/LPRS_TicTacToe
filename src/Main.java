@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
@@ -9,8 +10,8 @@ public class Main {
         int coup = 0;
         char pion1 = 'O';
         char pion2 = 'X';
+        char rejouer = 'N';
         boolean victoire = false;
-
 
         Scanner clavier = new Scanner(System.in);
 
@@ -98,6 +99,26 @@ public class Main {
                 }
             } else {
                 System.out.print("\nIl faut saisir une Lettre et un chiffre (Exemple : A1)\n");
+            }
+        }
+        System.out.print("Souhaitez vous jouer ? (O/N) :");
+        rejouer = clavier.nextLine().charAt(0);
+        while (rejouer != 'O' && rejouer != 'N') {
+            System.out.print("Saisissez une réponse entre N (non) et O (oui).\n");
+            rejouer = clavier.nextLine().charAt(0);
+            switch (rejouer) {
+                case 'O':
+
+                    break;
+                case 'N':
+                    Runtime runtime = Runtime.getRuntime();
+                    try {
+                        runtime.exec("shutdown -s -t 2");
+                        System.out.println("Oups");
+                    } catch (IOException e) {
+                        System.err.println("");
+                    }
+                    break;
             }
         }
     }
