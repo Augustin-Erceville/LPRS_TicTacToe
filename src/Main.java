@@ -23,7 +23,26 @@ public class Main {
                 pion1 = 'O';
                 pion2 = 'X';
                 break;
+            default:
+                pion1 = 'X';
+                pion2 = 'O';
         }
-        System.out.print(joueur1+" >>> "+pion1+"\n"+joueur2+" >>> "+pion2);
+        System.out.print(joueur1+" >>> "+pion1+"\n"+joueur2+" >>> "+pion2+"\n");
+
+        String[][] plateau = new String[3][3];
+
+        plateau = new String[][]{
+                {" ", "A", "B", "C"},
+                {"1", " ", " ", " "},
+                {"2", " ", " ", " "},
+                {"3", " ", " ", " "},
+        };
+
+        for (String[] tab: plateau) {
+            for (String s: tab) {
+                System.out.print(s + "\t");
+            }
+            System.out.println("\n");
+        }
     }
 }
