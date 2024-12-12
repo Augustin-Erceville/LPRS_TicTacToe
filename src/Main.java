@@ -85,7 +85,19 @@ public class Main {
                     if ((plateau[1][1] == plateau[2][2] && plateau[2][2] == plateau[3][3] && plateau[1][1] != ' ') || (plateau[1][3] == plateau[2][2] && plateau[2][2] == plateau[3][1] && plateau[1][3] != ' ')) {
                         victoire = true;
                     }
+
+// ------------------------- MESSAGE DE VICTOIRE -------------------------
+
+                    if (victoire) {
+                        System.out.print("\n"+joueuractuel+ ", à gagner !\n");
+                    } else if (coup == 9) {
+                        System.out.print("\nPersonnes à gagner. Vous êtes nul tout les deux :)\n");
+                    }
+                } else {
+                    System.out.print("\nIl faut saisir une Lettre et un chiffre.\n");
                 }
+            } else {
+                System.out.print("\nIl faut saisir une Lettre et un chiffre (Exemple : A1)\n");
             }
         }
     }
