@@ -108,7 +108,7 @@ public class Main {
             rejouer = clavier.nextLine().charAt(0);
             switch (rejouer) {
                 case 'O':
-
+                    System.out.println("Super... Et bien quittez le programme et relancez le :)");
                     break;
                 case 'N':
                     Runtime runtime = Runtime.getRuntime();
